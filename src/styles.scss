@@ -1,0 +1,25 @@
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+    @tailwind base;
+    html {
+        font-size: 10px;
+    }
+    body {
+        @apply text-base;
+    }
+    button {
+        @apply uppercase text-xs;
+    }
+}
+
+@layer tailwind-utilities {
+    @tailwind components;
+    @tailwind utilities;
+}
+
+@layer components {
+    .p-button {
+        @apply text-sm;
+    }
+}

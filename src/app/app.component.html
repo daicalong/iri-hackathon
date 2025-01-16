@@ -1,0 +1,13 @@
+<section class="p-10 bg-surface-50">
+ <ul>
+  @for (item of nav; track $index) {
+    <li class="p-10">
+      <a [routerLink]="[item.path]" routerLinkActive="router-link-active" >{{item.title}}</a>
+    </li>
+  }
+ </ul>
+</section>
+<section class="bg-surface-100">
+  <router-outlet></router-outlet>
+  
+</section>
