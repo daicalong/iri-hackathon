@@ -87,15 +87,18 @@ const fontSize = {
   'normalize-laptop': '50%', // Effectively setting 1rem = 8px
 };
 
-  module.exports = {
-    content: [
-      './src/**/*.{html, scss, css, ts, js}'
-    ],
-    theme: {
-      extend: {
-        spacing: values
+module.exports = {
+  content: [
+    './src/**/*.{html, scss, css, ts, js}'
+  ],
+  theme: {
+    extend: {
+      spacing: values,
+      fontFamily: {
+        display: ['Bebas Neue', 'Open Sans', 'sans-serif'],
       },
-      fontSize: fontSize
     },
-    plugins: [require('tailwindcss-primeui')]
-  }
+    fontSize: fontSize,
+  },
+  plugins: [require('tailwindcss-primeui')]
+}

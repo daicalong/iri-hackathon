@@ -1,13 +1,38 @@
-<section class="p-10 bg-surface-50">
- <ul>
-  @for (item of nav; track $index) {
-    <li class="p-10">
-      <a [routerLink]="[item.path]" routerLinkActive="router-link-active" >{{item.title}}</a>
-    </li>
-  }
- </ul>
+<section class="sticky top-0 flex items-center text-white h-60">
+  <div class="flex gap-10 w-200 px-30">
+    <span class="rounded-full bg-zinc-800 h-28 w-128"></span>
+  </div>
+
+  <ul class="flex gap-10">
+    @for (item of nav; track $index) {
+    @if(item.title) {
+    <a [routerLink]="[item.path]" routerLinkActive="bg-zinc-800 text-primary-500"
+      class="flex items-center text-sm font-bold rounded-lg px-15 h-28">
+      <span>{{item.title}}</span>
+    </a>
+    }
+    }
+  </ul>
 </section>
-<section class="bg-surface-100">
-  <router-outlet></router-outlet>
-  
+
+<section class="flex h-full">
+  @if(showDrawer()) {
+  <div class="flex flex-col flex-none gap-20 py-20 text-white transition w-200 px-30" @stagger>
+    <h2 class="text-lg font-display">Business</h2>
+    <div class="flex flex-col flex-none gap-10">
+      <a [routerLink]="['business/pending']" routerLinkActive="bg-zinc-800 text-primary-500"
+        class="flex items-center text-sm font-bold rounded-lg px-15 h-28">
+        <span>Pending Business</span>
+      </a>
+      <a class="flex items-center text-sm font-bold rounded-lg px-15 h-28">
+        <span>Lifecycle</span>
+      </a>
+    </div>
+  </div>
+  }
+  <section class="rounded-tl-[16px] bg-surface-100 w-full shadow-inner p-30 transition-all duration-300"
+    [ngClass]="{'rounded-tl-[16px]': showDrawer(), 'rounded-none': !showDrawer()}">
+    <router-outlet></router-outlet>
+  </section>
+
 </section>

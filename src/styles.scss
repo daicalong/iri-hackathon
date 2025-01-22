@@ -1,15 +1,14 @@
+@import "primeicons/primeicons.css";
 @layer tailwind-base, primeng, tailwind-utilities;
 
 @layer tailwind-base {
     @tailwind base;
     html {
         font-size: 10px;
+        @apply h-full;
     }
     body {
-        @apply text-base;
-    }
-    button {
-        @apply uppercase text-xs;
+        @apply text-base h-full bg-zinc-900 flex;
     }
 }
 
@@ -18,8 +17,10 @@
     @tailwind utilities;
 }
 
-@layer components {
-    .p-button {
-        @apply text-sm;
-    }
+.p-button {
+    @apply text-xs uppercase font-bold;
+}
+
+.p-togglebutton {
+    @apply text-xs uppercase font-bold;
 }

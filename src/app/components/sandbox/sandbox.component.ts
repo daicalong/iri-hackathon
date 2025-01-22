@@ -6,6 +6,8 @@ import { Button } from 'primeng/button';
 import { ConfirmDialog } from 'primeng/confirmdialog';
 import { SelectModule } from 'primeng/select';
 import { Toast } from 'primeng/toast';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { KnobModule } from 'primeng/knob';
 
 @Component({
   selector: 'app-sandbox',
@@ -17,6 +19,8 @@ import { Toast } from 'primeng/toast';
     Toast,
     Button,
     SelectModule,
+    SelectButtonModule,
+    KnobModule,
   ],
   templateUrl: './sandbox.component.html',
   styleUrl: './sandbox.component.scss',
@@ -35,6 +39,7 @@ export class SandboxComponent {
     { name: 'Paris', code: 'PRS' }
   ];
   selectedCity: City | undefined;
+  knobValue = 20;
 
   confirm(event: any): void {
     console.log(event);
