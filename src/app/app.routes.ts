@@ -1,9 +1,15 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
 
-export const routes: Routes = [
+export const appRoutes: Routes = [
     {
-        title: 'Sandbox',
-        path: 'sandbox',
-        loadComponent: () => import('./components/sandbox/sandbox.component').then(c => c.SandboxComponent)
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+    {
+        title: 'Home',
+        path: 'home',
+        component: HomeComponent,
     }
 ];

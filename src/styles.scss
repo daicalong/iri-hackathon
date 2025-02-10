@@ -1,15 +1,19 @@
-@layer tailwind-base, primeng, tailwind-utilities;
+@use "@angular/material" as mat;
+@layer tailwind-base, tailwind-utilities, components;
 
 @layer tailwind-base {
     @tailwind base;
-    html {
-        font-size: 10px;
+    html,
+    body {
+        height: 100%;
     }
     body {
-        @apply text-base;
+        margin: 0;
+        @apply font-body text-base;
     }
-    button {
-        @apply uppercase text-xs;
+    html {
+        font-size: 10px;
+        @apply h-full;
     }
 }
 
@@ -18,8 +22,50 @@
     @tailwind utilities;
 }
 
+html {
+    color-scheme: dark;
+    @include mat.theme(
+        (
+            color: (
+                primary: mat.$blue-palette,
+                tertiary: mat.$orange-palette,
+                theme-type: dark,
+              ),
+            typography: (
+                plain-family: Roboto,
+                brand-family: Bebas Neue,
+                bold-weight: 900,
+                medium-weight: 500,
+                regular-weight: 300
+            ),
+            density: 0
+        )
+    );
+}
+:root {
+    --mat-sys-body-small: @apply text-sm;
+    --mat-sys-body-medium: @apply text-base;
+    --mat-sys-body-large: @apply text-large;
+}
 @layer components {
-    .p-button {
-        @apply text-sm;
+    :root {
+
+        @include mat.button-overrides(
+            (
+                filled-label-text-size: var(--mat-sys-body-medium),
+                outlined-label-text-size: var(--mat-sys-body-mediumn),
+                protected-label-text-size: var(--mat-sys-body-medium),
+                text-label-text-size: var(--mat-sys-body-medium)
+            )
+        );
+    }
+}
+
+@layer components {
+    :host {
+        background: var(--mat-sys-primary-container);
+        color: var(--mat-sys-on-primary-container);
+        border: 1px solid var(--mat-sys-outline-variant);
+        font: var(--mat-sys-body-medium);
     }
 }

@@ -1,13 +1,15 @@
-<section class="p-10 bg-surface-50">
- <ul>
-  @for (item of nav; track $index) {
+<section class="p-10">
+  <ul>
+    @for (item of nav; track $index) {
+    @if (item?.title) {
     <li class="p-10">
-      <a [routerLink]="[item.path]" routerLinkActive="router-link-active" >{{item.title}}</a>
+      <a mat-button [routerLink]="[item.path]" routerLinkActive="router-link-active">{{item.title}}</a>
     </li>
-  }
- </ul>
+    }
+    }
+  </ul>
 </section>
-<section class="bg-surface-100">
+<section class="p-20">
   <router-outlet></router-outlet>
-  
+
 </section>

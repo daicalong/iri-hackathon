@@ -93,9 +93,12 @@ const fontSize = {
     ],
     theme: {
       extend: {
-        spacing: values
+        spacing: values,
+      },
+      fontFamily: {
+        display: ['Bebas Neue', 'Open Sans', 'sans-serif'],
+        body: ['Roboto', 'sans-serif'],
       },
       fontSize: fontSize
     },
-    plugins: [require('tailwindcss-primeui')]
   }
