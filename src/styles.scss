@@ -9,16 +9,11 @@
     }
     body {
         margin: 0;
-        font-family: Roboto, "Helvetica Neue", sans-serif;
+        @apply font-body text-base;
     }
     html {
         font-size: 10px;
-    }
-    body {
-        @apply text-base;
-    }
-    button {
-        @apply uppercase text-xs;
+        @apply h-full;
     }
 }
 
@@ -31,10 +26,14 @@ html {
     color-scheme: dark;
     @include mat.theme(
         (
-            color: mat.$violet-palette,
+            color: (
+                primary: mat.$blue-palette,
+                tertiary: mat.$orange-palette,
+                theme-type: dark,
+              ),
             typography: (
                 plain-family: Roboto,
-                brand-family: Open Sans,
+                brand-family: Bebas Neue,
                 bold-weight: 900,
                 medium-weight: 500,
                 regular-weight: 300
@@ -43,11 +42,14 @@ html {
         )
     );
 }
-
+:root {
+    --mat-sys-body-small: @apply text-sm;
+    --mat-sys-body-medium: @apply text-base;
+    --mat-sys-body-large: @apply text-large;
+}
 @layer components {
     :root {
-        --mat-sys-body-medium: @apply text-base;
-        
+
         @include mat.button-overrides(
             (
                 filled-label-text-size: var(--mat-sys-body-medium),
