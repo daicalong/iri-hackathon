@@ -20,8 +20,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## UI Framework
 
-This application uses PrimeNG version 18. To use prebuilt UI components, visit the [PrimeNG component library & reference](https://v18.primeng.org/autocomplete) page.
+This application uses Angular Material version 19. To use prebuilt UI components, visit the [Angular Mat 19 library & reference](https://material.angular.io/) page.
 
 ## CSS Library
 
-This application also uses TailwindCSS version  library for utility & semantic styling, for more information visit the [TailwindCSS documentation](https://tailwindcss.com/docs/installation) page.
+This application also uses TailwindCSS version 3 library for utility & semantic styling, for more information visit the [TailwindCSS documentation](https://tailwindcss.com/docs/installation) page.
