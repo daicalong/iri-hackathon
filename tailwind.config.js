@@ -97,5 +97,4 @@ const fontSize = {
       },
       fontSize: fontSize
     },
-    plugins: [require('tailwindcss-primeui')]
   }
