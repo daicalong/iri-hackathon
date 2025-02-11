@@ -1,9 +1,9 @@
-<section class="p-10">
-  <ul>
+<section class="px-20 py-10 bg-zinc-900">
+  <ul class="flex items-center gap-10">
     @for (item of nav; track $index) {
     @if (item?.title) {
     <li class="p-10">
-      <a mat-button [routerLink]="[item.path]" routerLinkActive="router-link-active">{{item.title}}</a>
+      <a [routerLink]="[item.path]" routerLinkActive="text-blue-500" class="text-base tracking-wider font-display">{{item.title}}</a>
     </li>
     }
     }
